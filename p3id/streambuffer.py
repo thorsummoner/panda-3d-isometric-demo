@@ -5,6 +5,10 @@ import sys
 import threading
 import time
 
+BLACKLIST_OS_NAMES = [
+    'nt',
+]
+
 
 class StreamBuffer(object):
     """ Class used to grab standard output or another stream.
@@ -73,3 +77,38 @@ class StreamBuffer(object):
             if not data:
                 break
             self.captured_text += data
+
+if os.name in BLACKLIST_OS_NAMES:
+    class StreamBuffer:
+        """ Tulio: The stars are not in position for this tribute!
+            Miguel: Like he said! Stars!... Can't do it... Not today.
+
+            >+;r)/;(|")rrr/==r*"|"|;|;r)=;"=r*|"|r/r;r);)*"*r?r|"/rrr?"=;=";;r=?r
+            <;r=;*r=r\/=|"r=;"|"r;"\"=\=(?*;;rrrr"*")=?=*r;;;r*|;r=**;=";==r*\)*r
+            aeeI21i|;=r"|?()""r;r;;=*==**rr*;"\*r";;?;*|=)**;r;;;r";=*"=r"||=;"//
+            HWQggRQ@PtL/"r\(|(\=;r(;=)**;"r)|r;*r|(|;r(/r")/=?;""***"|\/*rr;";;))
+            @@RRRQgHgWNM$Jyx|*|r*;\(*|?=*);;=;"=;;"=*==;;*;r/\v}Yy4$S6mqP$yv?;*|*
+            noV6b&QgQWHRBHNj+r**"";*(cYv*=;=**\)\vi[Yfuak9dM&&gWWHWRQHQRBBB@Es/"=
+            6J2SMBMe2w&HQWWd|r="==;>\$DDOMOOMM@@@RHQRQRRBWQQWHWQBHRBWHWQgQRWgBDX{
+            RhTe6?_ -`>nBWWRe"=";;r>+l&WBRBBBHRHRHHgWBQRQWRW@@@MKA9ZX5kV43aZbD@gH
+            k4t1;'.- .)p@gBBHV|;r*rr;"7hgRWWQWQHBBQHQNMOqKdbh%%hZk3F2oIJuFoo3j#5p
+            y1Tc_``  `?ORBBQHW4|"=((=";/z9G0MOp8hPXVakbO@DMP54a3aPMOA3CFnununC#eI
+            siix|'  .`-;ZOgHRRZvrr*("?}zFnuoCCjjnj4MDOIi+!--  .<"=||JMMkftonCFuFV
+            ivivii_ ---'-!r(v7i|\\)/)(}ztssztztFose$T_`.   '!YIMWgROCi5NE11Tfsz22
+            "=;/???v/"+!_ ' ,//||"";?|l1Y1Y1YTYzysC>   `'-.>6NNHHHgRgG=ANe}YzTyzt
+            =r";))???|/i?*?xYTv"*r"="\cxTlT1cTYYYYY.'''' '';OBHWHQQQQM^rPM]}YTlT1
+            ===="=\\|/(??/\}1v\"*rr*)|(viivL7[c1YTY^       `)A&gRgQN8v.`TDci}{c7}
+            =;=""*;;r"|=*|)YT"=**|**;)(\\?\|iiii{7T;.  --' ``.+ixYv;.`,+]Yvvxivic
+            ;"*r="rrr"*=r"ici;*=r;=;=="|??(|))iiiiiLv*+!!~:~!:,<>"==??vvvi/vvvviv
+            "?())?\;*|*="\Lc)"r"*;r;=r*"(/)/\=\?/\|/|viivvvivviviii(\\i)/?\|/\/|\
+            ;"*|"r";r;="?vxv*;r;;r*=;";(r(r=*r"rr;;)?((?||||\|?(/\)r)||;?/r\="***
+            r;*(|/|/\=""\{ir;="/;"";""r|/?"\=r()**r=|"*;=*=";**\r";;;;""=;"";|=";
+        """
+        def __init__(self, stream=None, threaded=False):
+            pass
+
+        def __enter__(self):
+            pass
+
+        def __exit__(self, exc_type, exc_value, exc_tb):
+            pass

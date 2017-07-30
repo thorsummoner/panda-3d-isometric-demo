@@ -15,7 +15,7 @@ setuptools.setup(
     name='panda-3d-isometric-demo',
 
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.1.dev1',
+    version='0.0.1.dev2.2',
 
     description='A panda-3d-isometric-demo Python project',
     long_description=readme(),
@@ -86,7 +86,7 @@ setuptools.setup(
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
-        'console_scripts': [
+        'gui_scripts': [
             'panda-3d-isometric-demo=p3id.__main__:main',
         ],
     },
